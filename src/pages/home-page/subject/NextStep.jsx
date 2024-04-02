@@ -13,7 +13,7 @@ export const NextStep = () => {
     return (
       <main
         className="flex justify-center"
-        data-aos="fade-up-left"
+        data-aos="fade-up-right"
         data-aos-anchor-placement="top-bottom"
         data-aos-offset="75"
         data-aos-delay="100"
