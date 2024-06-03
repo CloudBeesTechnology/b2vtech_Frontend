@@ -15,7 +15,7 @@ export const Contact = () => {
     
       <main id="contact">
         <h1 className="text-center w-full text-4xl text-primary font-semibold mb-16 mt-16">
-          Contact Us
+        Contact Us
         </h1>
         <div className="flex justify-center items-center py-5 bg-gradient-to-r from-skyBlue to-primary ">
           <section className="max-w-screen-2xl w-[95%] gap-5 grid grid-cols-2 overflow-hidden max-[850px]:grid-cols-1 ">
