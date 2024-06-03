@@ -10,13 +10,13 @@ export const RegisterSchema = Yup.object({
     .email("Invalid email address")
     .required("Email Id is Mandatory"),
   password: Yup.string()
-  .min(8, 'Password must be at least 8 characters long')
-  .max(12, 'Password must not exceed 12 characters')
-  .matches(
-    /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+])[0-9a-zA-Z!@#$%^&*()_+]+$/,
-    'Password must contain at least one number, one letter, and one symbol'
-  )
-  .required('Password is mandatory'),
+    .min(8, "Password must be at least 8 characters long")
+    .max(12, "Password must not exceed 12 characters")
+    .matches(
+      /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+])[0-9a-zA-Z!@#$%^&*()_+]+$/,
+      "Password must contain at least one number, one letter, and one symbol"
+    )
+    .required("Password is mandatory"),
   Cpassword: Yup.string()
     .oneOf([Yup.ref("password"), null], "Passwords must match")
     .required("Confirm Password is Mandatory"),

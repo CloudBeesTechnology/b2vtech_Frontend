@@ -3,8 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body {
+body{
   min-height: 100vh;
   width: 100%;
   padding: 0%;
@@ -18,4 +17,57 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+@layer utilities {
+  .center{
+    @apply flex justify-center items-center
+  }
+
+  .custom-input-first {
+    @apply w-full border-b-2 border-r-2 border-t-2 border-l-2 px-2 py-1.5 relative;
+  }
+  .custom-input {
+    @apply w-full border-b-2 border-r-2 border-t-2 border-l-2 px-2 py-1.5 relative;
+  }
+  .custom-input-third {
+    /* @apply  border-b-2 border-r-2 border-t-2 border-l-2 px-2 py-1.5 relative; */
+    @apply w-full border-b-2 border-r-2 border-t-2 border-l-2 px-2 py-1.5 relative;
+  }
+  .custom-input_second {
+    @apply max-sm:w-60 max-w-md lg:max-w-lg w-96 border-b-2 border-r-2 border-t-2 border-l-2  relative;
+  }
+  
+  .custom-input-field {
+    @apply text-mediumgrey;
+    @apply focus:outline-none;
+  }
+ 
+  .custom-input-label {
+    @apply absolute text-litegrey left-0 mx-1 px-1 my-1.5 -translate-y-4 text-sm duration-100 ease-linear;
+    @apply peer-placeholder-shown:translate-y-0;
+    @apply peer-placeholder-shown:text-base;
+    @apply peer-placeholder-shown:text-litegrey;
+    @apply peer-focus:ml-1;
+    @apply peer-focus:-translate-y-4;
+    @apply peer-focus:px-1;
+    @apply peer-focus:text-litegrey;
+    @apply pointer-events-none bg-white;
+  }
+  .shadow {
+    box-shadow: 0px 0px 7px 0px rgb(120, 120, 249);
+    border-radius: 7px;
+    /* margin-inline:10px; */
+  }
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+};
+
+input[type=number] {
+    -moz-appearance:textfield;
+    appearance: textfield;
 }

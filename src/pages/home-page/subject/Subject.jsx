@@ -5,6 +5,7 @@ import { SubjectView } from "./SubjectView";
 import { Learner } from "./Learner";
 import { Video } from "./Video";
 import { NextStep } from "./NextStep";
+import { Link } from "react-router-dom";
 
 export const Subject = () => {
   useEffect(() => {
@@ -15,7 +16,7 @@ export const Subject = () => {
   }, []);
   return (
     <>
-      <main
+      <section
         className="flex justify-center"
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
@@ -27,41 +28,40 @@ export const Subject = () => {
         data-aos-once="false"
       >
         <div className="max-w-screen-2xl w-full flex flex-col justify-center my-20 gap-5">
-          <h1 className="text-4xl font-bold  text-primary text-center  my-20">
+          <h4 className="text-4xl font-bold  text-primary text-center  my-20">
             Explore Top Empowering Careers
-          </h1>
-          <section className="grid max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3 grid-cols-4 max-lg:gap-x-20 max-lg:px-10 justify-items-center gap-y-7 p-5 gap-x-5">
+          </h4>
+          <section className="flex flex-wrap gap-5 justify-center items-center">
+          {/* grid max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3 grid-cols-4 max-lg:gap-x-20 max-lg:px-10 justify-items-center gap-y-7 p-5 gap-x-5 */}
             {SubjectView.map((value, index) => {
               return (
                 <div
                   key={index}
-                  className="relative h-[150px] w-[250px] overflow-hidden rounded-lg group"
+                  className="relative  overflow-hidden rounded-lg group"
                 >
-                  <div>
+                  <div className="h-[150px] w-[280px] rounded-lg">
                     <img
-                      className="object-cover w-full rounded-lg"
+                      className="object-cover w-full h-full rounded-lg"
                       src={value.img}
                       alt="not found"
                     />
                   </div>
-                  <h1 className="text-white font-bold text-xl absolute z-20 left-1/2 top-2/4 -translate-x-2/4 -translate-y-2/4 hover:underline">
+                  <h5 className="text-white font-bold text-xl absolute z-20 left-1/2 top-2/4 -translate-x-2/4 -translate-y-2/4 transition-all hover:underline hidden group-hover:block group-hover:duration-700">
                     PROGRAMMING
-                  </h1>
-                  <div className="h-[150px] w-[250px] bg-primary absolute top-0 rounded-lg opacity-50 -left-full group-hover:-left-0 group-hover:duration-700"></div>
+                  </h5>
+                  <div className="h-[150px] w-full bg-primary absolute top-0 rounded-lg opacity-50 -left-full group-hover:-left-0 group-hover:duration-700"></div>
                 </div>
               );
             })}
           </section>
           <div className="flex justify-center mt-10 ">
-            <button className="border px-8 py-5 border-primary hover:text-white hover:bg-primary hover:duration-700 text-primary font-semibold text-xl rounded-xl">
+            <Link to="/internship" className="border px-8 py-5 border-primary hover:text-white hover:bg-primary hover:duration-700 text-primary font-semibold text-xl rounded-xl">
               View More Intern
-            </button>
+            </Link>
           </div>
         </div>
-      </main>
-      <Learner />
-      <Video />
-      <NextStep />
+      </section>
+      
     </>
   );
 };

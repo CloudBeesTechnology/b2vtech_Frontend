@@ -14,7 +14,7 @@ export const CourseCounter = () => {
       { icon: <LiaChalkboardTeacherSolid />, no: "10", lable: "Trainers" },
     ];
     return (
-      <main className="flex justify-center items-center relative my-200 mt-20">
+      <section className="flex justify-center items-center relative my-200 mt-20">
         <img
           className="h-auto md:h-[22rem] object-cover border w-full"
           src={book} alt="not found"
@@ -42,6 +42,6 @@ export const CourseCounter = () => {
             );
           })}
         </section>
-      </main>
+      </section>
     );
   };

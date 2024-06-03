@@ -12,7 +12,7 @@ export const LearnSkills = () => {
       AOS.refresh();
     }, []);
     return (
-      <main
+      <section
         className="flex justify-center  mt-40"
         data-aos="fade-right"
         data-aos-anchor-placement="top-bottom"
@@ -25,9 +25,9 @@ export const LearnSkills = () => {
       >
         <div className="max-w-screen-2xl w-full grid grid-cols-2 max-md:grid-cols-1 broder px-5 gap-x-5 max-md:gap-y-5">
           <section className="flex flex-col  py-5 px-5">
-            <h1 className="text-3xl font-bold text-primary">
+            <h3 className="text-3xl font-bold text-primary">
               Exploring Exciting Internship Pathways
-            </h1>
+            </h3>
             <p className="my-3 text-mediumgrey">
               <i>
                 Embark on a journey of self-discovery and professional growth as
@@ -74,6 +74,6 @@ export const LearnSkills = () => {
             />
           </section>
         </div>
-      </main>
+      </section>
     );
   };

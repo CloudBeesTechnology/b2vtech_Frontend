@@ -1,20 +1,16 @@
-import { Navbar } from "../navbar/Navbar";
 import bg from "../../assets/about/about.svg";
-import aboutEndBg from "../../assets/about/about_End_bg.svg";
-import { Footer } from "../footer/Footer";
+import aboutEndBg from "../../assets/about/about_end_bg.svg";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { AboutCard } from "./AboutCard";
 
 export const About = () => {
-   const { pathname } = useLocation();
-   useEffect(() => {
-     window.scrollTo(0, 0);
-   }, [pathname]);
-  return (
-    <>
-      <Navbar />
-      <main>
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+  return (   
+      <section>
         <div className="w-full  h-[500px] overflow-hidden shadow-xl relative flex justify-center items-center">
           <img
             className="object-cover w-full h-full absolute"
@@ -29,7 +25,7 @@ export const About = () => {
         <section className="flex justify-center items-center">
           <div className="max-w-screen-2xl w-[95%] flex flex-col justify-center items-center">
             <article className="flex flex-col justify-center items-center my-16">
-              <h1 className="text-skyBlue text-3xl font-bold">About Our B2V</h1>
+              <h2 className="text-skyBlue text-3xl font-bold">About Our B2V</h2>
               <p className="w-[80%] text-lg text-mediumgrey my-10">
                 Embarking on a transformative journey in the realms of digital
                 innovation, our organization is delighted to open its doors to
@@ -61,10 +57,8 @@ export const About = () => {
             pushing the boundaries of what's possible in the digital landscape.
           </p>
         </div>
-      </main>
-
-      <Footer />
-    </>
+      </section>
+   
   );
 };
 

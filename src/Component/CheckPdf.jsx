@@ -3,7 +3,6 @@ import { Viewer,Worker  } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import { pdfjs } from 'react-pdf';
 
-
 export const CheckPdf = (props) => {
   const [loading, setLoading] = useState(true);
 

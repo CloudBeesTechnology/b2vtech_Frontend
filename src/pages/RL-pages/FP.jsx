@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ForgetPassword, api } from "../../Component/Baseurl";
 
 export const FP = () => {
     const [error, setError] = useState("");
@@ -13,12 +14,14 @@ export const FP = () => {
       formState: { errors },
     } = useForm({ resolver: yupResolver(ForgotSchema) });
     const OnSubmit = handleSubmit((data) => {
+      console.log(data);
       SendOtp(data);
     });
     const SendOtp = async (data) => {
+      const FP=`${api}${ForgetPassword}`
       axios({
         method: "post",
-        url: " https://app-ednc65xvqq-uc.a.run.app/user/forgot",
+        url:FP,
         data: data,
       })
         .then(() => {
@@ -31,7 +34,7 @@ export const FP = () => {
   
     return (
       <>
-        <h1 className="text-skyBlue text-2xl font-semibold">Forgot Password</h1>
+        <h4 className="text-skyBlue text-2xl font-semibold">Forgot Password</h4>
         {error && <p className="text-[red] mt-5">{error}</p>}
         <section className="w-[90%] mt-5">
           <p className="text-md text-secondary ">Enter your email address</p>

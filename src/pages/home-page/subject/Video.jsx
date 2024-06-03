@@ -27,7 +27,7 @@ export const Video = () => {
   }, []);
 
   return (
-    <main
+    <section
       data-aos="fade-up"
       data-aos-anchor-placement="top-bottom"
       data-aos-offset="25"
@@ -37,9 +37,9 @@ export const Video = () => {
       data-aos-mirror="true"
       data-aos-once="false"
     >
-      <h1 className="text-4xl font-bold  text-primary text-center  my-20">
+      <h5 className="text-4xl font-bold  text-primary text-center  my-20">
         Explore Your Skills
-      </h1>
+      </h5>
       <div className="flex justify-center my-20 px-5 relative">
         {/* <video className="rounded-lg" ref={videoRef} width="70%" height="300">
             <source src={learning} type="video/mp4" />
@@ -70,6 +70,6 @@ export const Video = () => {
           )}
         </div>
       </div>
-    </main>
+    </section>
   );
 };

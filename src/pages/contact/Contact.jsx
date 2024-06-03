@@ -1,5 +1,3 @@
-import { Navbar } from "../navbar/Navbar";
-import { Footer } from "../footer/Footer";
 import { useEffect} from "react";
 import { useLocation } from "react-router-dom";
 import { ContactUs } from "./ContactUs";
@@ -9,12 +7,12 @@ import { PCU } from "./PCU";
 export const Contact = () => {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname]);
 
   return (
     <>
-      <Navbar />
+    
       <main id="contact">
         <h1 className="text-center w-full text-4xl text-primary font-semibold mb-16 mt-16">
           Contact Us
@@ -32,9 +30,9 @@ export const Contact = () => {
             ></iframe>
 
             <div className="lg:ml-5 bg-white w-full rounded-xl p-3  flex justify-center items-center flex-col my-5">
-              <h1 className="text-3xl text-primary font-semibold text-center sm:mb-5 max-md:mt-6 pl-3">
+              <h2 className="text-3xl text-primary font-semibold text-center sm:mb-5 max-md:mt-6 pl-3">
                 Contact
-              </h1>
+              </h2>
 
               <ContactUs />
             </div>
@@ -42,10 +40,7 @@ export const Contact = () => {
         </div>
         <PCU />
       </main>
-      <Footer />
     </>
   );
 };
-
-
 

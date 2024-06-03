@@ -10,9 +10,9 @@ export const AboutCard = () => {
           <img className="object-cover w-full" src={dm} alt="not found" />
         </div>
         <div className="text-center px-8 ">
-          <h1 className="text-skyBlue text-2xl font-bold my-3">
+          <h3 className="text-skyBlue text-2xl font-bold my-3">
             Digital Marketing
-          </h1>
+          </h3>
           <p className="text-mediumgrey text-[16px]">
             Interns will be engaged in real-world projects, collaborating with
             seasoned professionals to develop a deep understanding of online
@@ -22,9 +22,9 @@ export const AboutCard = () => {
           </p>
         </div>
         <div className="text-center px-8 block max-[870px]:hidden">
-          <h1 className="text-skyBlue text-2xl font-bold my-3">
+          <h4 className="text-skyBlue text-2xl font-bold my-3">
             React/React Native
-          </h1>
+          </h4>
           <p className="text-mediumgrey text-[16px]">
             As a React and React Native intern, you will immerse yourself in the
             principles of component-based architecture, JSX syntax, and the
@@ -38,9 +38,9 @@ export const AboutCard = () => {
           <img className="object-cover w-full" src={react} alt="not found" />
         </div>
         <div className="text-center px-8 hidden max-[870px]:block">
-          <h1 className="text-skyBlue text-2xl font-bold my-3">
+          <h5 className="text-skyBlue text-2xl font-bold my-3">
             React/React Native
-          </h1>
+          </h5>
           <p className="text-mediumgrey text-[16px]">
             As a React and React Native intern, you will immerse yourself in the
             principles of component-based architecture, JSX syntax, and the
@@ -54,7 +54,7 @@ export const AboutCard = () => {
           <img className="object-cover w-full" src={flutter} alt="not found" />
         </div>
         <div className="text-center px-8">
-          <h1 className="text-skyBlue text-2xl font-bold my-3">Flutter</h1>
+          <h6 className="text-skyBlue text-2xl font-bold my-3">Flutter</h6>
           <p className="text-mediumgrey text-[16px]">
             As a Flutter intern, you will delve into the intricacies of
             widget-based UI development, state management, and asynchronous
@@ -67,3 +67,4 @@ export const AboutCard = () => {
       </section>
     );
   };
+

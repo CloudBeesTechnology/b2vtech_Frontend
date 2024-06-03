@@ -91,9 +91,9 @@ export const Feature = () => {
           data-aos-mirror="true"
           data-aos-once="false"
         >
-          <h1 className="text-4xl font-bold text-primary text-center mt-48 mb-20">
+          <h2 className="text-4xl font-bold text-primary text-center mt-48 mb-20">
             Our Features
-          </h1>
+          </h2>
           <Slider {...settings} className="px-10">
             {FeatureCD.map((value, index) => {
               return (
@@ -101,12 +101,14 @@ export const Feature = () => {
                   key={index}
                   className="max-w-md min-w-min bg-white rounded-lg shadow-xl"
                 >
-                  <img className="rounded-t-xl" src={value.img} alt= {value.title}/>
-                  <div className="mt-2 px-3 min-h-[250px]">
-                    <h1 className="text-xl text-primary font-bold">
+                 <div className="h-72">
+                 <img className="rounded-t-xl h-full w-full object-cover" src={value.img} alt= {value.title}/>
+                 </div>
+                  <div className="mt-2 px-3 min-h-[200px]">
+                    <h3 className="text-xl text-primary font-bold text-center my-6 h-10">
                       {value.title}
-                    </h1>
-                    <p className="text-center my-5 text-litegrey text-sm">
+                    </h3>
+                    <p className="text-center text-litegrey text-sm">
                       {value.content}
                     </p>
                   </div>
@@ -121,13 +123,7 @@ export const Feature = () => {
           </Slider>
         </section>
       </main>
-      <CourseCounter />
-      <LearnSkills />
+      
     </>
   );
 };
-
-
-
-
-

@@ -1,8 +1,8 @@
 import reactSyllabus from "../../../assets/pdf/react_pdf/Syllabus for React.pdf";
 import basic1r from "../../../assets/pdf/react_pdf/React Task Basic_1.pdf";
 import basic2r from "../../../assets/pdf/react_pdf/React Task Basic_2.pdf";
-import intermediate1r from "../../../assets/pdf/react_pdf/React Task intermediate_1.pdf";
-import intermediate2r from "../../../assets/pdf/react_pdf/React Task intermediate_2.pdf";
+import intermediate1r from "../../../assets/pdf/react_pdf/React Task Intermediate_1.pdf";
+import intermediate2r from "../../../assets/pdf/react_pdf/React Task Intermediate_2.pdf";
 import complex1r from "../../../assets/pdf/react_pdf/React Task Complex_1.pdf";
 import complex2r from "../../../assets/pdf/react_pdf/React Task Complex_2.pdf";
 import spring0r from "../../../assets/pdf/react_pdf/React_Task_Spring_0.pdf";

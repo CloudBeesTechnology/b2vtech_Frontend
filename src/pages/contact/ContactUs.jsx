@@ -1,12 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
+import { api, contactEP } from "../../Component/Baseurl";
 
 export const ContactUs = () => {
     const [formData, setFormData] = useState({
       email: "",
       phone: "",
-      msg: "",
+      message: "",
     });
+const [error,setError]=useState("")
+
     const OnchangeValue = (e) => {
       const { name, value } = e.target;
       setFormData({
@@ -15,17 +18,22 @@ export const ContactUs = () => {
       });
     };
     const handleSubmit = () => {
-      axios({
-        method: "post",
-        url: "https://app-ednc65xvqq-uc.a.run.app/contact/contactdata",
-        data: formData,
-      }).then(() => {
-        setFormData({
-          email: "",
-          phone: "",
-          msg: "",
+      const contactUrl=`${api}${contactEP}`
+      if (formData.email && formData.phone && formData.message) {
+        axios({
+          method: "post",
+          url: contactUrl,
+          data: formData,
+        }).then(() => {
+          setFormData({
+            email: "",
+            phone: "",
+            message: "",
+          });
         });
-      });
+      } else {
+        setError('Must fill the field');
+      }
     };
   
     return (
@@ -44,6 +52,7 @@ export const ContactUs = () => {
             name="email"
             onChange={OnchangeValue}
           />
+          {error && <p className="text-[red]">{error}</p>}
         </section>
         <section>
           <label className="text-secondary text-lg font-semibold" htmlFor="tel">
@@ -59,16 +68,18 @@ export const ContactUs = () => {
             placeholder="Enter your Phone Number"
             onChange={OnchangeValue}
           />
+          {error && <p className="text-[red]">{error}</p>}
         </section>
         {/* Textarea */}
         <div className="">
-          <label className="text-secondary text-lg font-semibold" htmlFor="msg">
+          <label className="text-secondary text-lg font-semibold" htmlFor="message">
             Message
           </label>
           <textarea
             rows="4"
-            value={formData.msg}
-            name="msg"
+            id="message"
+            value={formData.message}
+            name="message"
             className="w-full resize-none outline-none my-2 py-3 px-3 border border-primary rounded-xl"
             placeholder="Write your message here..."
             onChange={OnchangeValue}

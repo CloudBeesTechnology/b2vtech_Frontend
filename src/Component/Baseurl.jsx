@@ -1,7 +1,14 @@
-import axios from "axios";
 
-export const api = () => {
-  axios.create({
-    baseURL: "https://app-ednc65xvqq-uc.a.run.app",
-  });
-};
+export const api ="https://app-ednc65xvqq-uc.a.run.app"
+export const registerEP ="/user/registerOtp"
+export const loginEP ="/user/login"
+export const internsEditEP ="/user/detail"
+export const internsEditProfile ="/edit/editdata/"
+export const employeeEP ="/user/detail"
+export const employeeImageEP ="/user/employeeImg"
+export const employeeEditEP ="/user/employeeProfileUpdate"
+export const contactEP ="/contact/contactdata"
+export const ForgetPassword ="/user/forgot"
+export const VerifyNP ="/user/verifynp"
+export const VerifyOTP ="/user/verifyotp"
+export const Registering ="/user/addData"

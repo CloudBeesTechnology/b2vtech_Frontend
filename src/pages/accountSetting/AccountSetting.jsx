@@ -1,30 +1,40 @@
 import { useEffect, useRef, useState } from "react";
-import { Footer } from "../footer/Footer";
-import { Navbar } from "../navbar/Navbar";
 import { FaRegEdit } from "react-icons/fa";
 import axios from "axios";
+import {
+  api,
+  internsEditEP,
+  internsEditProfile,
+} from "../../Component/Baseurl";
+import { useLocation } from "react-router-dom";
 
 export const AccountSetting = () => {
   const [loginFN, setLoginFN] = useState("");
   const [loginLN, setLoginLN] = useState("");
   const [loginPN, setLoginPN] = useState("");
+  const [edit, setEdit] = useState(false);
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
 
   const firstNameInputRef = useRef(null);
   const lastNameInputRef = useRef(null);
   const phoneNumberInputRef = useRef(null);
 
   useEffect(() => {
-    const getId = localStorage.getItem("LoginId");
-
+    const id = sessionStorage.getItem("userID");
+    const internurl = `${api}${internsEditEP}`;
     axios({
-      method: "get",
-      url: `https://app-ednc65xvqq-uc.a.run.app/user/rgd/${getId}`,
+      method: "post",
+      url: internurl,
+      data: { id },
     }).then((res) => {
-      const { firstName, lastName, phoneNumber } = res.data.RGD;
+      // console.log(res.data.firstName);
+      const { firstName, lastName, phoneNumber } = res.data;
       setLoginFN(firstName);
       setLoginLN(lastName);
       setLoginPN(phoneNumber);
-
     });
   }, []);
 
@@ -33,19 +43,20 @@ export const AccountSetting = () => {
   };
 
   const onSumbit = () => {
-    const getId = localStorage.getItem("LoginId");
-      axios({
-        method: "put",
-        url: `https://app-ednc65xvqq-uc.a.run.app/edit/editdata/${getId}`,
-        data: {
-          firstName: loginFN,
-          lastName: loginLN,
-          phoneNumber: loginPN,
-        },
-      })
+    const getId = sessionStorage.getItem("userID");
+    const internUpdateProfile = `${api}${internsEditProfile}${getId}`;
+    axios({
+      method: "put",
+      url: internUpdateProfile,
+      data: {
+        firstName: loginFN,
+        lastName: loginLN,
+        phoneNumber: loginPN,
+      },
+    })
       .then(() => {
-        localStorage.setItem("LoginFN", loginFN);
-          window.location.href = "/intern";
+        sessionStorage.setItem("userFN", loginFN);
+        // window.location.href = "/intern";
       })
       .catch((error) => {
         console.error("Error updating profile:", error);
@@ -54,8 +65,7 @@ export const AccountSetting = () => {
 
   return (
     <>
-      <Navbar />
-      <main className="flex justify-center items-center h-screen">
+      <section className="flex justify-center items-center h-screen">
         <section className="bg-white max-w-[500px] w-full flex items-center flex-col p-10 rounded-xl shadow-2xl">
           <h1 className="text-skyBlue text-2xl font-semibold">
             Edit Your Details
@@ -77,6 +87,7 @@ export const AccountSetting = () => {
                 name="firstName"
                 value={loginFN}
                 id="firstName"
+               readOnly={!edit}
                 onChange={(e) => {
                   setLoginFN(e.target.value);
                 }}
@@ -85,7 +96,9 @@ export const AccountSetting = () => {
                 className="text-2xl mr-3 text-primary"
                 onClick={() => handleEditClick(firstNameInputRef)}
               >
-                <FaRegEdit />
+               <button    onClick={() => {
+                      setEdit(true);
+                    }}>  <FaRegEdit /></button> 
               </p>
             </div>
           </section>
@@ -106,6 +119,7 @@ export const AccountSetting = () => {
                 name="lastName"
                 id="lastName"
                 value={loginLN}
+               readOnly={!edit}
                 onChange={(e) => {
                   setLoginLN(e.target.value);
                 }}
@@ -114,7 +128,9 @@ export const AccountSetting = () => {
                 className="text-2xl mr-3 text-primary"
                 onClick={() => handleEditClick(lastNameInputRef)}
               >
-                <FaRegEdit />
+            <button    onClick={() => {
+                      setEdit(true);
+                    }}>  <FaRegEdit /></button> 
               </p>
             </div>
           </section>
@@ -135,6 +151,7 @@ export const AccountSetting = () => {
                 name="phoneNumber"
                 id="phoneNumber"
                 value={loginPN}
+               readOnly={!edit}
                 onChange={(e) => {
                   setLoginPN(e.target.value);
                 }}
@@ -143,7 +160,9 @@ export const AccountSetting = () => {
                 className="text-2xl mr-3 text-primary"
                 onClick={() => handleEditClick(phoneNumberInputRef)}
               >
-                <FaRegEdit />
+              <button    onClick={() => {
+                      setEdit(true);
+                    }}>  <FaRegEdit /></button> 
               </p>
             </div>
           </section>
@@ -155,8 +174,7 @@ export const AccountSetting = () => {
             Save
           </button>
         </section>
-      </main>
-      <Footer />
+      </section>
     </>
   );
 };

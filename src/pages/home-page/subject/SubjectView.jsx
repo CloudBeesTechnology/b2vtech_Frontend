@@ -1,35 +1,20 @@
-import ai from "../../../assets/subjects/ai.jpg";
-import animation from "../../../assets/subjects/animation.jpg";
-import automachine from "../../../assets/subjects/automachine.jpg";
 import laptop from "../../../assets/subjects/laptop.jpg";
-import mobile from "../../../assets/subjects/mobile.jpg";
-import robot from "../../../assets/subjects/robot.jpg";
-import saas from "../../../assets/subjects/saas.jpg";
-import uidesigner from "../../../assets/subjects/ui-designer.jpg";
+import dm from "../../../assets/subjects/dm.webp";
+import qa from "../../../assets/subjects/qa.webp";
+import uidesigner from "../../../assets/subjects/ui-designer.avif";
 
 export const SubjectView = [
     {
       img: laptop,
     },
     {
-      img: robot,
+      img: dm,
     },
     {
-      img: saas,
+      img: qa,
     },
     {
       img: uidesigner,
     },
-    {
-      img: automachine,
-    },
-    {
-      img: animation,
-    },
-    {
-      img: mobile,
-    },
-    {
-      img: ai,
-    },
+    
   ];

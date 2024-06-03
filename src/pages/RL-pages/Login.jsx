@@ -2,12 +2,11 @@ import { PiEyeClosedBold } from "react-icons/pi";
 import { FaEye } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Navbar } from "../navbar/Navbar";
-import { Footer } from "../footer/Footer";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginSchema } from "../../Component/Validation";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { api, loginEP } from "../../Component/Baseurl";
 
 export const Login = () => {
   const [error, setError] = useState("");
@@ -18,30 +17,53 @@ export const Login = () => {
   } = useForm({ resolver: yupResolver(LoginSchema) });
   const [isvisible, setIsVisible] = useState(false);
   const { pathname } = useLocation();
-
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname]);
 
   const onSubmit = handleSubmit((data) => {
-    LoginStore(data);
-
+    const loginData = {
+      email: data.email,
+      password:data.password
+    };
+    LoginStore(loginData);
   });
 
   const LoginStore = (data) => {
+    const loginurl = `${api}${loginEP}`;
     axios({
       method: "post",
-      // url: "http://127.0.0.1:5001/b2vtech-3519c/us-central1/app/user/login",
-      url: "https://app-ednc65xvqq-uc.a.run.app/user/login",
+      url: loginurl,
       data: data,
     })
       .then((res) => {
-        const {_id,firstName,category}= res.data.user;
-        console.log(_id,firstName,category);
-        localStorage.setItem("LoginFN", firstName);
-        localStorage.setItem("LoginId", _id);
-        localStorage.setItem("LoginCategory", category);
-        window.location.href = "/intern";
+        const store = res.data;
+        if (
+          store.loginUser &&
+          (store.loginUser.role === "intern" ||
+            store.loginUser.role === "mentor") 
+        ) {
+          const loginUser = store.loginUser.firstName;
+          const loginUserID = store.loginUser._id;
+          const loginUserCategory = store.loginUser.category;
+          const loginUserRole = store.loginUser.role;
+       
+          sessionStorage.setItem("userFN", loginUser);
+          sessionStorage.setItem("userID", loginUserID);
+          sessionStorage.setItem("userCategory", loginUserCategory);
+          sessionStorage.setItem("userRole", loginUserRole);
+          window.location.href = "/intern";
+        }
+        if (store.loginUser && store.loginUser.role === "employee") {
+          const loginUser = store.loginUser.firstName;
+          const loginUserID = store.loginUser._id;
+          const loginUserRole = store.loginUser.role;
+
+         sessionStorage.setItem("userFN", loginUser);
+         sessionStorage.setItem("userID", loginUserID);
+         sessionStorage.setItem("userRole", loginUserRole);
+          window.location.href = "/employee";
+        }
       })
       .catch(() => {
         setError("Invalid Username and Password");
@@ -50,12 +72,11 @@ export const Login = () => {
 
   return (
     <>
-      <Navbar />
       <section className="flex justify-center items-center h-screen">
         <section className="bg-white max-w-[500px] w-full flex items-center flex-col p-10 max-sm:p-3 rounded-xl shadow-2xl">
-          <h1 className="text-skyBlue text-2xl font-semibold">
+          <h5 className="text-skyBlue text-2xl font-semibold">
             Log in to Your Account
-          </h1>
+          </h5>
           {error && <p className="text-[red] mt-5">{error}</p>}
           <section className="w-full">
             <div className="group w-[90%] mx-auto border-litegrey border py-2 px-5 mt-7 rounded-lg focus-within:border-2 focus-within:border-primary">
@@ -103,7 +124,7 @@ export const Login = () => {
               </label>
             </article>
             <Link to="/forgot" className="text-mediumgrey text-sm">
-              Forget Password ?
+              Forgot Password ?
             </Link>
           </div>
           <button
@@ -123,8 +144,6 @@ export const Login = () => {
           </p>
         </section>
       </section>
-
-      <Footer />
     </>
   );
 };

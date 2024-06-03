@@ -25,8 +25,8 @@ export const Agile_Pdf = (props) => {
     <section className="flex justify-evenly items-center w-full flex-wrap gap-5 mx-10">
      {CommonPdf.map((value,i)=>{
       return(
-        <>
-         <div  key={i} 
+        <section key={i} >
+         <div  
         className="w-full max-w-xs text-skyBlue bg-white shadow-lg mt-10 rounded-lg  flex justify-center items-center flex-col px-5 py-10 gap-5"
         onClick={() => setAgileDoc(!agileDoc)}
       >
@@ -48,7 +48,7 @@ export const Agile_Pdf = (props) => {
           </div>
         </section>
       )}
-        </>
+        </section>
       )
      })}
     </section>

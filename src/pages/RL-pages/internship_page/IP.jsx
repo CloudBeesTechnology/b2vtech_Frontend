@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { Footer } from "../../footer/Footer";
-import { Navbar } from "../../navbar/Navbar";
 import { useLocation } from "react-router-dom";
 import { PdfDetailsReact } from "./PDF";
 import { pdfjs } from "react-pdf";
@@ -21,9 +19,9 @@ export const Intern = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    const storedFN = localStorage.getItem("LoginFN");
-    const storedCategory = localStorage.getItem("LoginCategory");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const storedFN = sessionStorage.getItem("userFN");
+    const storedCategory = sessionStorage.getItem("userCategory");
     setName(storedFN);
     setCategory(storedCategory);
   }, [pathname]);
@@ -37,18 +35,16 @@ export const Intern = () => {
 
   return (
     <>
-      <Navbar />
       <section className="flex justify-center items-center">
         <div className="max-w-screen-2xl w-[95%] flex flex-col items-center">
-          <h1 className="text-6xl font-bold text-secondary mx-3 mt-16  max-sm:text-3xl">
+          <h2 className="text-6xl font-bold text-secondary mx-3 mt-16  max-sm:text-3xl">
             Welcome,{" "}
             <span className="uppercase text-primary max-sm:text-3xl">
               {name || "Guest"}
             </span>
-          </h1>
+          </h2>
 
          <Agile_Pdf />
-
           <section className=" flex justify-center items-center flex-wrap gap-10 my-20">
             {PdfDetailsReact.map((value, i) => {
               if (category === value.category) {
@@ -59,7 +55,7 @@ export const Intern = () => {
                     onClick={ViewingPdfFile(i)}
                   >
                     <p className="text-5xl ">{value.icon}</p>
-                    <h1 className=" text-lg font-semibold text-center">{value.title}</h1>
+                    <h3 className=" text-lg font-semibold text-center">{value.title}</h3>
                   </div>
                 );
               } else {
@@ -69,9 +65,9 @@ export const Intern = () => {
 
             {PdfDetailsReact.every((value) => category !== value.category) && (
               <div key="weUploadSoon">
-                <h1 className="border text-white text-lg bg-primary p-3 rounded-lg">
+                <h3 className="border text-white text-lg bg-primary p-3 rounded-lg">
                   We upload soon
-                </h1>
+                </h3>
               </div>
             )}
           </section>
@@ -83,7 +79,6 @@ export const Intern = () => {
           )}
         </div>
       </section>
-      <Footer />
     </>
   );
 };

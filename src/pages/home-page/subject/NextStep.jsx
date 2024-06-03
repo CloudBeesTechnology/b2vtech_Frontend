@@ -11,7 +11,7 @@ export const NextStep = () => {
       AOS.refresh();
     }, []);
     return (
-      <main
+      <section
         className="flex justify-center"
         data-aos="fade-up-right"
         data-aos-anchor-placement="top-bottom"
@@ -24,10 +24,10 @@ export const NextStep = () => {
       >
         <div className="max-w-screen-2xl my-20 w-full grid grid-cols-2 max-md:grid-cols-1 broder px-5 gap-x-5 max-md:gap-y-5">
           <section className="px-3 mb-10">
-            <h1 className="text-3xl font-bold text-primary ">
+            <h4 className="text-3xl font-bold text-primary ">
               Take the next step toward your personal and professional goals with
               us.
-            </h1>
+            </h4>
             <p className="text-mediumgrey my-5">
               It acknowledges that individuals have personal aspirations and
               ambitions. Taking the next step is about moving closer to achieving
@@ -46,6 +46,6 @@ export const NextStep = () => {
             />
           </section>
         </div>
-      </main>
+      </section>
     );
   };

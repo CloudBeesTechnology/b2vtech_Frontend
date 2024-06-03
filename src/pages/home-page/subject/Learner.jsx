@@ -12,7 +12,7 @@ export const Learner = () => {
       AOS.refresh();
     }, []);
     return (
-      <main
+      <section
         className="flex justify-center"
         data-aos="fade-up-right"
         data-aos-anchor-placement="top-bottom"
@@ -32,9 +32,9 @@ export const Learner = () => {
             />
           </section>
           <section>
-            <h1 className="text-3xl font-bold text-primary pl-3 max-md:mt-10">
+            <h4 className="text-3xl font-bold text-primary pl-3 max-md:mt-10">
               Nurturing Talent Through Internships
-            </h1>
+            </h4>
             <div className="flex flex-col gap-3 mt-10 px-5">
               <article className="flex gap-3">
                 <span className="text-skyBlue text-2xl">
@@ -70,6 +70,6 @@ export const Learner = () => {
             </button>
           </section>
         </div>
-      </main>
+      </section>
     );
   };
