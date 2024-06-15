@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <main className="bg-primary p-14 max-sm:p-5 mt-10 flex justify-center items-center relative">
+    <section className="bg-primary p-14 max-sm:p-5 mt-10 flex justify-center items-center relative">
       <section className="max-w-screen-2xl w-[95%]">
-        <h1 className="text-white text-4xl max-sm:text-2xl mb-5 font-semibold max-[500px]:text-center">
+        <h1 className="text-white text-4xl max-sm:text-2xl flex mb-5 font-semibold max-[500px]:text-center">
           Bees2Ventures TECHNOLOGY
         </h1>
         <div className="w-full h-1 bg-white mt-2"></div>
+        <span className="text-[transparent] ">
+          b2b b2v tech solutions technology traning marketing
+        </span>
 
         {/* Address details */}
 
@@ -35,27 +38,27 @@ export const Footer = () => {
             <h3 className="mb-2 text-skyBlue text-lg font-bold">FOLLOW US</h3>
             <article className="flex gap-3 items-center max-[620px]:justify-center text-3xl text-white">
               <span>
-              <Link
-               to="https://www.instagram.com/b2vtechnology"
-              target="_blank"
-            >
-                <FaInstagram />
+                <Link
+                  to="https://www.instagram.com/b2vtechnology"
+                  target="_blank"
+                >
+                  <FaInstagram />
                 </Link>
               </span>
               <span>
-              <Link
-              to="https://www.facebook.com/profile.php?id=61558108075791"
-              target="_blank"
-            >
-                <FaFacebookF />
+                <Link
+                  to="https://www.facebook.com/profile.php?id=61558108075791"
+                  target="_blank"
+                >
+                  <FaFacebookF />
                 </Link>
               </span>
               <span>
-              <Link
-              to="https://www.linkedin.com/in/b2v-technology-3b65b7290/"
-              target="_blank"
-            >
-                <FaLinkedin />
+                <Link
+                  to="https://www.linkedin.com/in/b2v-technology-3b65b7290/"
+                  target="_blank"
+                >
+                  <FaLinkedin />
                 </Link>
               </span>
             </article>
@@ -74,6 +77,6 @@ export const Footer = () => {
           </address>
         </section>
       </section>
-    </main>
+    </section>
   );
 };

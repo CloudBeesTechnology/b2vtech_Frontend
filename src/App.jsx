@@ -1,5 +1,5 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import { Navbar } from "./Component/Navbar";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Navbar } from "./Component/Navbar/Navbar";
 import { Footer } from "./Component/Footer";
 import { Home } from "./pages/home-page/Home";
 import { Login } from "./pages/RL-pages/Login";
@@ -18,6 +18,11 @@ import ReactGA from "react-ga4";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Employee } from "./pages/employee/Employee";
 import { EmployeeProfile } from "./pages/employee/EmployeeProfile";
+import { EmployeeDashboard } from "./pages/employee/employeeHome/EmployeeDashboard";
+import { EmployeeLeaveDetails } from "./pages/employee/employeeLeave/EmployeeLeaveDetails";
+import { EmployeeLeaveHistory } from "./pages/employee/employeeLeave/EmployeeLeaveHistory";
+import { TeamMembers } from "./pages/employee/teamMember/TeamMembers";
+import { UpcomingLeaveHistory } from "./pages/employee/upcomingHistory/UpcomingLeaveHistory";
 
 const Tracking_ID = "G-377LCGTX74";
 ReactGA.initialize(Tracking_ID);
@@ -26,6 +31,14 @@ export const App = () => {
   const [showPages, setShowPages] = useState(false);
   const [role, setRole] = useState("employee");
   const [loginPage, setLoginPage] = useState(false);
+  const location = useLocation();
+  const hideFooterPaths = [
+    "/employee",
+    "/employee/leaveDetails",
+    "/employee/leaveHistory",
+    "/employee/teams",
+    "/employee/upcomingHolidays",
+  ];
   useEffect(() => {
     ReactGA.send({
       hitType: "pageview",
@@ -40,13 +53,10 @@ export const App = () => {
       setShowPages(false);
     }
     if (data === null) {
-        
-        setLoginPage(true);
-      }
-    
+      setLoginPage(true);
+    }
   }, []);
   const isLoggedIn = sessionStorage.getItem("userID") !== null;
-  
 
   useEffect(() => {
     const handleTabClose = (event) => {
@@ -85,7 +95,16 @@ export const App = () => {
         {isLoggedIn && (
           <>
             <Route path="/intern" Component={Intern} />
-            <Route path="/employee" Component={Employee} />
+            <Route path="/employee" Component={Employee}>
+              <Route index element={<EmployeeDashboard />} />
+              <Route
+                path="upcomingHolidays"
+                element={<UpcomingLeaveHistory />}
+              />
+              <Route path="leaveDetails" element={<EmployeeLeaveDetails />} />
+              <Route path="leaveHistory" element={<EmployeeLeaveHistory />} />
+              <Route path="teams" element={<TeamMembers />} />
+            </Route>
             <Route path="/employeeProfile" Component={EmployeeProfile} />
             <Route path="/account" Component={AccountSetting} />
           </>
@@ -95,7 +114,7 @@ export const App = () => {
         <Route path="/contact" Component={Contact} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-      <Footer />
+      {!hideFooterPaths.includes(location.pathname) && <Footer />}
     </HelmetProvider>
   );
 };

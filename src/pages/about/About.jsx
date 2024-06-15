@@ -25,7 +25,8 @@ export const About = () => {
         <section className="flex justify-center items-center">
           <div className="max-w-screen-2xl w-[95%] flex flex-col justify-center items-center">
             <article className="flex flex-col justify-center items-center my-16">
-              <h2 className="text-skyBlue text-3xl font-bold">About Our B2V</h2>
+              <h2 className="text-skyBlue text-3xl font-bold">About Our B2V </h2>
+              <span className="text-[transparent]">b2b b2v tech solutions </span>
               <p className="w-[80%] text-lg text-mediumgrey my-10">
                 Embarking on a transformative journey in the realms of digital
                 innovation, our organization is delighted to open its doors to
@@ -34,7 +35,10 @@ export const About = () => {
                 dynamic domains of digital marketing, React/React Native
                 development, and Flutter application design, offering a
                 comprehensive and enriching experience.
+                
               </p>
+              <span className="text-[transparent]">technology traning marketing </span>
+         
             </article>
 
             <AboutCard />
@@ -47,6 +51,7 @@ export const About = () => {
             src={aboutEndBg}
             alt="not found"
           />
+          <span className="text-[transparent]">b2b b2v tech solutions </span>
           <p className="absolute px-3 top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-white text-xl text-center font-semibold w-[90%] max-[500px]:text-[15px] max-[500px]:leading-tight">
             Join us on this exhilarating internship journey, where you'll not
             only refine your skills in digital marketing, React development,
@@ -56,6 +61,7 @@ export const About = () => {
             seize this opportunity, and become part of a community dedicated to
             pushing the boundaries of what's possible in the digital landscape.
           </p>
+          <span className="text-[transparent]">technology traning marketing </span>
         </div>
       </section>
    

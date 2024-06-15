@@ -7,7 +7,7 @@ export const CheckPdf = (props) => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <section className='my-10 flex justify-center items-center'>
+    <section className='my-10 flex justify-center items-center '>
       <div style={{height:"100%"}} className='max-sm:w-[350px] w-[550px] ' >
       <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`}>
       <Viewer

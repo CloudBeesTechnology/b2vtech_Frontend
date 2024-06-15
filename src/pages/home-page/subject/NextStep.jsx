@@ -22,6 +22,7 @@ export const NextStep = () => {
         data-aos-mirror="true"
         data-aos-once="false"
       >
+           <p className="text-[transparent]">b2b</p>
         <div className="max-w-screen-2xl my-20 w-full grid grid-cols-2 max-md:grid-cols-1 broder px-5 gap-x-5 max-md:gap-y-5">
           <section className="px-3 mb-10">
             <h4 className="text-3xl font-bold text-primary ">

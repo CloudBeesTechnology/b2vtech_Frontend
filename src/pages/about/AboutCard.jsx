@@ -10,6 +10,7 @@ export const AboutCard = () => {
           <img className="object-cover w-full" src={dm} alt="not found" />
         </div>
         <div className="text-center px-8 ">
+          <span className="text-[transparent]">b2b b2v tech solutions </span>
           <h3 className="text-skyBlue text-2xl font-bold my-3">
             Digital Marketing
           </h3>
@@ -20,8 +21,10 @@ export const AboutCard = () => {
             internship promises not only skill acquisition but also an invaluable
             chance to contribute to impactful marketing campaigns.
           </p>
+          <span className="text-[transparent]">technology traning marketing </span>
         </div>
         <div className="text-center px-8 block max-[870px]:hidden">
+          <span className="text-[transparent]">b2b b2v tech solutions </span>
           <h4 className="text-skyBlue text-2xl font-bold my-3">
             React/React Native
           </h4>
@@ -33,11 +36,13 @@ export const AboutCard = () => {
             third-party libraries, honing your skills in creating modular and
             scalable user interfaces.
           </p>
+          <span className="text-[transparent]">technology traning marketing </span>
         </div>
         <div className="w-full">
           <img className="object-cover w-full" src={react} alt="not found" />
         </div>
         <div className="text-center px-8 hidden max-[870px]:block">
+          <span className="text-[transparent]">b2b b2v tech solutions </span>
           <h5 className="text-skyBlue text-2xl font-bold my-3">
             React/React Native
           </h5>
@@ -49,6 +54,7 @@ export const AboutCard = () => {
             third-party libraries, honing your skills in creating modular and
             scalable user interfaces.
           </p>
+          <span className="text-[transparent]">technology traning marketing </span>
         </div>
         <div className="w-full">
           <img className="object-cover w-full" src={flutter} alt="not found" />

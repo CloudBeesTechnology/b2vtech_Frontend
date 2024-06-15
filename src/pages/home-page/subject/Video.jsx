@@ -37,6 +37,7 @@ export const Video = () => {
       data-aos-mirror="true"
       data-aos-once="false"
     >
+         <p className="text-[transparent]">b2b</p>
       <h5 className="text-4xl font-bold  text-primary text-center  my-20">
         Explore Your Skills
       </h5>

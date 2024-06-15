@@ -1,5 +1,5 @@
-import { useLocation } from "react-router-dom";
-import { EmployeeDashboard } from "./EmployeeDashboard";
+import { Outlet, useLocation } from "react-router-dom";
+import { EmployeeDashboard } from "./employeeHome/EmployeeDashboard";
 import { useEffect } from "react";
 
 export const Employee = () => {
@@ -9,7 +9,7 @@ export const Employee = () => {
   }, [pathname]);
   return (
     <section className="flex flex-wrap justify-around">
-      <EmployeeDashboard/>
+      <Outlet/>
     </section>
   );
 };

@@ -15,7 +15,7 @@ export const Contact = () => {
     
       <main id="contact">
         <h1 className="text-center w-full text-4xl text-primary font-semibold mb-16 mt-16">
-        Contact Us
+          Contact Us
         </h1>
         <div className="flex justify-center items-center py-5 bg-gradient-to-r from-skyBlue to-primary ">
           <section className="max-w-screen-2xl w-[95%] gap-5 grid grid-cols-2 overflow-hidden max-[850px]:grid-cols-1 ">
@@ -29,13 +29,15 @@ export const Contact = () => {
               title="map"
             ></iframe>
 
-            <div className="lg:ml-5 bg-white w-full rounded-xl p-3  flex justify-center items-center flex-col my-5">
+            <div className="lg:ml-5 bg-white w-full rounded-xl p-3 flex justify-center items-center flex-col my-5">
+            <span className="text-[transparent]">b2b b2v tech solutions </span>
               <h2 className="text-3xl text-primary font-semibold text-center sm:mb-5 max-md:mt-6 pl-3">
                 Contact
               </h2>
 
               <ContactUs />
             </div>
+            <span className="text-[transparent]">technology traning marketing </span>
           </section>
         </div>
         <PCU />

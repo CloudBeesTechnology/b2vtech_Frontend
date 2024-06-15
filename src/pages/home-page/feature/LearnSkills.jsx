@@ -23,6 +23,7 @@ export const LearnSkills = () => {
         data-aos-mirror="true"
         data-aos-once="false"
       >
+        <p className="text-[transparent]">b2b</p>
         <div className="max-w-screen-2xl w-full grid grid-cols-2 max-md:grid-cols-1 broder px-5 gap-x-5 max-md:gap-y-5">
           <section className="flex flex-col  py-5 px-5">
             <h3 className="text-3xl font-bold text-primary">
@@ -74,6 +75,7 @@ export const LearnSkills = () => {
             />
           </section>
         </div>
+        <p className="text-[transparent]">b2b</p>
       </section>
     );
   };

@@ -27,6 +27,7 @@ export const Subject = () => {
         data-aos-mirror="true"
         data-aos-once="false"
       >
+           <p className="text-[transparent]">b2b</p>
         <div className="max-w-screen-2xl w-full flex flex-col justify-center my-20 gap-5">
           <h4 className="text-4xl font-bold  text-primary text-center  my-20">
             Explore Top Empowering Careers

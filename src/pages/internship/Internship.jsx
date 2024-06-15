@@ -5,10 +5,10 @@ import { useEffect } from "react";
 import { InternProvide } from "./InternProvide";
 
 export const Internship = () => {
-   const { pathname } = useLocation();
-   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-   }, [pathname]);
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
   return (
     <>
       <section>
@@ -23,6 +23,9 @@ export const Internship = () => {
           <section className=" flex justify-center items-center ">
             <div className="max-w-screen-2xl relative w-full h-screen flex justify-center items-center px-8 flex-wrap">
               <div className="flex-1 max-[500px]:text-center ">
+                <span className="text-[transparent]">
+                  b2b b2v tech solutions technology traning marketing
+                </span>
                 <h3 className="text-7xl text-primary font-bold my-5 px-3 max-sm:text-6xl max-[390px]:text-3xl">
                   INTERNSHIP{" "}
                 </h3>
@@ -60,10 +63,6 @@ export const Internship = () => {
         </div>
         <InternProvide />
       </section>
-      
     </>
   );
 };
-
-
-

@@ -12,3 +12,11 @@ export const ForgetPassword ="/user/forgot"
 export const VerifyNP ="/user/verifynp"
 export const VerifyOTP ="/user/verifyotp"
 export const Registering ="/user/addData"
+export const leaveApply="/leave/leaveApply"
+export const leaveDetails="/leave/leaveDetails"
+export const holidayList="/holidays/showHolidays"
+
+
+
+
+

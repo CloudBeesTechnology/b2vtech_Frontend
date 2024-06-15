@@ -29,14 +29,14 @@ export const InternProvide = () => {
                       <h2 className="text-2xl text-center my-5 text-primary font-semibold max-[400px]:text-2xl">
                         {value.title}
                       </h2>
-                      <p className="text-center text-sm mb-5 px-2 text-mediumgrey  overflow-hidden">
+                      <p className="text-center text-sm mb-5 px-[9px] text-mediumgrey line-clamp-3">
                         {value.p}
                       </p>
                       <Link
                         to="/register"
                         className="text-xl text-white bg-primary px-5 py-2 rounded-xl my-2 font-semibold "
                       >
-                        Find more
+                        Enroll Now
                       </Link>
                     </div>
                   );
@@ -45,6 +45,7 @@ export const InternProvide = () => {
             </div>
           </section>
         </div>
+        <p className="text-[transparent]">b2b tech solutions</p>
       </main>
     );
   };

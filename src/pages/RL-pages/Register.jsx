@@ -82,7 +82,7 @@ export const Register = () => {
       })
       .catch((error) => {
         console.error("Error registering user:", error);
-        setError("Invalid request. Please check your input and try again.");
+        // setError("Invalid request. Please check your input and try again.");
       });
   }
   return (

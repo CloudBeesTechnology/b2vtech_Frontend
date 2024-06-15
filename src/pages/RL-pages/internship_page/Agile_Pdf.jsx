@@ -15,11 +15,11 @@ export const Agile_Pdf = (props) => {
     pdf:Agile,
     img:agileImg,
   },
-    {
-    title:"Resume Document",
-    pdf:resume,
-    img:resumeImg
-  },
+  //   {
+  //   title:"Resume Document",
+  //   pdf:resume,
+  //   img:resumeImg
+  // },
 ]
   return (
     <section className="flex justify-evenly items-center w-full flex-wrap gap-5 mx-10">

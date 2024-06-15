@@ -91,9 +91,10 @@ export const Feature = () => {
           data-aos-mirror="true"
           data-aos-once="false"
         >
-          <h2 className="text-4xl font-bold text-primary text-center mt-48 mb-20">
+          <h2 className="text-4xl font-bold text-primary text-center mt-48 mb-16">
             Our Features
           </h2>
+          <p className="text-[transparent]">b2b</p>
           <Slider {...settings} className="px-10">
             {FeatureCD.map((value, index) => {
               return (
@@ -122,6 +123,7 @@ export const Feature = () => {
             })}
           </Slider>
         </section>
+        <p className="text-[transparent]">b2b</p>
       </main>
       
     </>

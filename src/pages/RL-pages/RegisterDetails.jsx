@@ -6,5 +6,5 @@ export const RegisterDetails = [
     { value: "ui/ux designer", label: "UI/UX designer" },
     { value: "quality assurance", label: "Quality assurance" },
     { value: "project management", label: "Project management" },
-    { value: "cloud network", label: "Cloud Network" },
+    { value: "cloud", label: "Cloud Networking" },
   ]

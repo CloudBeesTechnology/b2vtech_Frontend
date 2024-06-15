@@ -42,6 +42,7 @@ export const CourseCounter = () => {
             );
           })}
         </section>
+       
       </section>
     );
   };

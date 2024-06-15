@@ -9,6 +9,7 @@ import spring0r from "../../../assets/pdf/react_pdf/React_Task_Spring_0.pdf";
 import learnreact from "../../../assets/pdf/react_pdf/React Beginner's.pdf";
 import learnweb from "../../../assets/pdf/react_pdf/Web_Development_Learn.pdf";
 import { GiNotebook } from "react-icons/gi";
+import { FaCloud } from "react-icons/fa";
 import {
   TbRosetteNumber0,
   TbRosetteNumber1,
@@ -83,49 +84,42 @@ export const PdfDetailsReact = [
   {
     icon: <GiNotebook />,
     category: "digital",
-
     pdf: "",
     title: "Digital Syllabus",
   },
   {
     icon: <TbRosetteNumber0 />,
     category: "digital",
-
     pdf: "",
     title: "Digital Sprint 0",
   },
   {
     icon: <TbRosetteNumber1 />,
     category: "digital",
-
     pdf: "",
     title: "Digital Sprint 1",
   },
   {
     icon: <TbRosetteNumber2 />,
     category: "digital",
-
     pdf: "",
     title: "Digital Sprint 2",
   },
   {
     icon: <TbRosetteNumber3 />,
     category: "digital",
-
     pdf: "",
     title: "Digital Sprint 3",
   },
   {
     icon: <TbRosetteNumber4 />,
     category: "digital",
-
     pdf: "",
     title: "Digital Sprint 4",
   },
   {
     icon: <TbRosetteNumber5 />,
     category: "digital",
-
     pdf: "",
     title: "Digital Sprint 5",
   },
@@ -133,63 +127,60 @@ export const PdfDetailsReact = [
     icon: <TbRosetteNumber6 />,
     category: "digital",
     pdf: "",
-
     title: "Digital Sprint 6",
   },
   {
     icon: <GiNotebook />,
     category: "flutter",
     pdf: "",
-
     title: "Flutter Syllabus",
   },
   {
     icon: <TbRosetteNumber0 />,
     category: "flutter",
     pdf: "",
-
     title: "Flutter Sprint 0",
   },
   {
     icon: <TbRosetteNumber1 />,
     category: "flutter",
     pdf: "",
-
     title: "Flutter Sprint 1",
   },
   {
     icon: <TbRosetteNumber2 />,
     category: "flutter",
     pdf: "",
-
     title: "Flutter Sprint 2",
   },
   {
     icon: <TbRosetteNumber3 />,
     category: "flutter",
     pdf: "",
-
     title: "Flutter Sprint 3",
   },
   {
     icon: <TbRosetteNumber4 />,
     category: "flutter",
     pdf: "",
-
     title: "Flutter Sprint 4",
   },
   {
     icon: <TbRosetteNumber5 />,
     category: "flutter",
     pdf: "",
-
-    title: "flutter Sprint 5",
+   title: "flutter Sprint 5",
   },
   {
     icon: <TbRosetteNumber6 />,
     category: "flutter",
     pdf: "",
-
     title: "Flutter Sprint 6",
+  },
+  {
+    icon: <FaCloud />,
+    category: "flutter",
+    pdf: "",
+    title: "cloud",
   },
 ];

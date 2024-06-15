@@ -18,56 +18,63 @@ export const Login = () => {
   const [isvisible, setIsVisible] = useState(false);
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
 
   const onSubmit = handleSubmit((data) => {
     const loginData = {
       email: data.email,
-      password:data.password
+      password: data.password,
     };
     LoginStore(loginData);
   });
 
   const LoginStore = (data) => {
     const loginurl = `${api}${loginEP}`;
-    axios({
-      method: "post",
-      url: loginurl,
-      data: data,
-    })
-      .then((res) => {
-        const store = res.data;
-        if (
-          store.loginUser &&
-          (store.loginUser.role === "intern" ||
-            store.loginUser.role === "mentor") 
-        ) {
-          const loginUser = store.loginUser.firstName;
-          const loginUserID = store.loginUser._id;
-          const loginUserCategory = store.loginUser.category;
-          const loginUserRole = store.loginUser.role;
-       
-          sessionStorage.setItem("userFN", loginUser);
-          sessionStorage.setItem("userID", loginUserID);
-          sessionStorage.setItem("userCategory", loginUserCategory);
-          sessionStorage.setItem("userRole", loginUserRole);
-          window.location.href = "/intern";
-        }
-        if (store.loginUser && store.loginUser.role === "employee") {
-          const loginUser = store.loginUser.firstName;
-          const loginUserID = store.loginUser._id;
-          const loginUserRole = store.loginUser.role;
-
-         sessionStorage.setItem("userFN", loginUser);
-         sessionStorage.setItem("userID", loginUserID);
-         sessionStorage.setItem("userRole", loginUserRole);
-          window.location.href = "/employee";
-        }
+    try {
+      axios({
+        method: "post",
+        url: loginurl,
+        data: data,
       })
-      .catch(() => {
-        setError("Invalid Username and Password");
-      });
+        .then((res) => {
+          const store = res.data;
+          if (
+            store.loginUser &&
+            (store.loginUser.role === "intern" ||
+              store.loginUser.role === "mentor")
+          ) {
+            const loginUser = store.loginUser.firstName;
+            const loginUserID = store.loginUser._id;
+            const loginUserCategory = store.loginUser.category;
+            const loginUserRole = store.loginUser.role;
+
+            sessionStorage.setItem("userFN", loginUser);
+            sessionStorage.setItem("userID", loginUserID);
+            sessionStorage.setItem("userCategory", loginUserCategory);
+            sessionStorage.setItem("userRole", loginUserRole);
+            window.location.href = "/intern";
+          }
+          if (store.loginUser && store.loginUser.role === "employee") {
+            const loginUser = store.loginUser.firstName;
+            const loginUserID = store.loginUser._id;
+            const loginUserRole = store.loginUser.role;
+            const employeeID=store.loginUser.employeeId;
+
+            sessionStorage.setItem("userFN", loginUser);
+            sessionStorage.setItem("userID", loginUserID);
+            sessionStorage.setItem("userRole", loginUserRole);
+            sessionStorage.setItem("employeeID", employeeID);
+            window.location.href = "/employee";
+          }
+        })
+        .catch((error) => {
+          // console.log(error.response.data.error);
+          setError(error.response.data.error)
+        });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
