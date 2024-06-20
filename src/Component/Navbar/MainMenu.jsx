@@ -5,14 +5,12 @@ import {
   MdArrowDropDown,
   MdOutlineArrowDropUp,
   MdOutlineDashboard,
-  MdSendToMobile
+  MdSendToMobile,
 } from "react-icons/md";
-
 
 import { PiMicrosoftTeamsLogo } from "react-icons/pi";
 import { Aside } from "./Aside";
-
-
+import { AdminAside } from "./AdminAside";
 
 export const MainMenu = ({
   aside,
@@ -25,7 +23,8 @@ export const MainMenu = ({
   set,
   accountNavigate,
 }) => {
-  
+  const role = sessionStorage.getItem("userRole");
+
   return (
     <>
       {!showbtn ? (
@@ -88,7 +87,7 @@ export const MainMenu = ({
                   )}
                 </NavLink>
               </div>
-              <NavLink  
+              <NavLink
                 to="/about"
                 className={({ isActive }) =>
                   isActive ? "text-skyBlue underline font-bold" : ""
@@ -132,13 +131,11 @@ export const MainMenu = ({
             <AiOutlineMenu />
           </div>
         </div>
+      ) : role === "admin" ? (
+        <AdminAside set={set} accountNavigate={accountNavigate} />
       ) : (
-    <Aside 
-    set={set}
-    accountNavigate={accountNavigate}
-   />
+        <Aside set={set} accountNavigate={accountNavigate} />
       )}
-   
     </>
   );
 };

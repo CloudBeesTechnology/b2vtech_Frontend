@@ -67,6 +67,16 @@ export const Login = () => {
             sessionStorage.setItem("employeeID", employeeID);
             window.location.href = "/employee";
           }
+          if (store.loginUser && store.loginUser.role === "admin") {
+            const loginUser = store.loginUser.firstName;
+            const loginUserID = store.loginUser._id;
+            const loginUserRole = store.loginUser.role;
+
+            sessionStorage.setItem("userFN", loginUser);
+            sessionStorage.setItem("userID", loginUserID);
+            sessionStorage.setItem("userRole", loginUserRole);
+            window.location.href = "/superAdmin";
+          }
         })
         .catch((error) => {
           // console.log(error.response.data.error);

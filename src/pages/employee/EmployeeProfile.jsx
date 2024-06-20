@@ -29,14 +29,14 @@ export const EmployeeProfile = () => {
       });
   }, []);
   return (
-    <section className="flex justify-around  w-full max-md:flex-col">
-     <div className="max-sm:w-[95%] flex justify-center flex-1 px-2">
+    <section className="flex items-center flex-col w-full my-10">
+     {/* <div className=" flex justify-center flex-1 px-2"> */}
      <EmployeeOD employee={employeeDetails} />
-     </div>
-     <div className="max-sm:w-[95%] flex items-center px-2 flex-col flex-1">
+     {/* </div>
+     <div className=" flex items-center px-2 flex-col flex-1"> */}
      <EmployeePD employee={employeeDetails} />
       <EmployeeCD employee={employeeDetails} />
-     </div>
+     {/* </div> */}
     </section>
   );
 };

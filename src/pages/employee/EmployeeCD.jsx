@@ -22,9 +22,9 @@ export const EmployeeCD = ({ employee }) => {
       setFormData({
         email: val.email,
         phoneNumber: val.phoneNumber,
-        street: val.address[0].street,
-        state: val.address[0].state,
-        city: val.address[0].city,
+        // street: val.address[0].street,
+        // state: val.address[0].state,
+        // city: val.address[0].city,
       });
     });
   }, [employee]);
@@ -35,9 +35,6 @@ export const EmployeeCD = ({ employee }) => {
     const updatedData = {
       email: formData.email,
       phoneNumber: formData.phoneNumber,
-      street: formData.street,
-      state: formData.state,
-      city: formData.city,
       _id: id,
     };
 
@@ -105,33 +102,6 @@ export const EmployeeCD = ({ employee }) => {
             <label className="custom-input-label">Phone Number</label>
           </div>
         </div>
-        {/* <div className=" md:mx-14 rounded-lg text-center ">
-          {edit ? (
-            <div className="mx-auto">
-              {" "}
-              <button
-                className="px-8 py-2 bg-primary text-white text-xl mt-5 rounded-lg "
-                onClick={() => {
-                  onSubmit();
-                  setEdit(false);
-                }}
-              >
-                Update Profile
-              </button>
-            </div>
-          ) : (
-            <div className="mx-auto">
-              <button
-                className="px-8 py-2 bg-primary text-white text-xl mt-5 rounded-lg "
-                onClick={() => {
-                  setEdit(!edit);
-                }}
-              >
-                Edit Profile
-              </button>
-            </div>
-          )}
-        </div> */}
       </div>
     </div>
   );

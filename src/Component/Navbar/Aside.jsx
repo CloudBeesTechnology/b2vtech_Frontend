@@ -6,9 +6,7 @@ import {
   MdOutlineHolidayVillage,
 } from "react-icons/md";
 import { PiMicrosoftTeamsLogo } from "react-icons/pi";
-import { useEffect, useState } from "react";
-import { EmployeeDashboard } from "../../pages/employee/employeeHome/EmployeeDashboard";
-import { EmployeeLeaveDetails } from "../../pages/employee/employeeLeave/EmployeeLeaveDetails";
+
 
 export const Aside = ({ set, accountNavigate }) => {
   const location = useLocation();
@@ -39,7 +37,7 @@ export const Aside = ({ set, accountNavigate }) => {
       )}
 
       <aside className=" bg-gradient-to-b from-primary from-50% to-skyBlue text-xl pt-20 h-full fixed left-0 top-[5.2rem] ">
-        <div className="flex flex-col gap-8 mt-10 pr-10 text-white">
+        <div className="flex flex-col gap-8 mt-10 pr-5 text-white">
           <NavLink
             to="/employee"
             className={`flex items-center gap-2 p-2 pl-5 rounded-r-full ${

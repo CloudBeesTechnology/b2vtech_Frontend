@@ -55,7 +55,6 @@ export const LeaveDetails = () => {
         <Link
           to="/employee/leaveDetails"
           className="text-litegrey"
-          // onClick={() => setActiveMenu(1)} // Set activeMenu to 1 on click
         >
           View
         </Link>

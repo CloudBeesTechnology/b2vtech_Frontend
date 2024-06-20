@@ -1,0 +1,30 @@
+.checkbox-verify {
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    border: 2px solid green;
+  }
+  
+  .checkbox-reject {
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    border: 2px solid red;
+  }
+  
+  .checkbox-verify-checked {
+    border: 2px solid green;
+  }
+  
+  .checkbox-verify-unchecked {
+    border: 2px solid green;
+  }
+  
+  .checkbox-reject-checked {
+    border: 2px solid red;
+  }
+  
+  .checkbox-reject-unchecked {
+    border: 2px solid red;
+  }
+  

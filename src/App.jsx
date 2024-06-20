@@ -23,6 +23,13 @@ import { EmployeeLeaveDetails } from "./pages/employee/employeeLeave/EmployeeLea
 import { EmployeeLeaveHistory } from "./pages/employee/employeeLeave/EmployeeLeaveHistory";
 import { TeamMembers } from "./pages/employee/teamMember/TeamMembers";
 import { UpcomingLeaveHistory } from "./pages/employee/upcomingHistory/UpcomingLeaveHistory";
+import { SuperAdmin } from "./pages/admin/SuperAdmin";
+import { EmployeeInfo } from "./pages/admin/adminEmployee/EmployeeInfo";
+import { AdminDashboard } from "./pages/admin/adminHome/AdminDashboard";
+import { ApprovedEmp } from "./pages/admin/adminEmployee/ApprovedEmp";
+import { InternsInfo } from "./pages/admin/adminIntern/InternsInfo";
+import { EmployeeLeaveApproved } from "./pages/admin/adminLA/EmployeeLeaveApproved";
+import { ApprovedInterns } from "./pages/admin/adminIntern/ApprovedInterns";
 
 const Tracking_ID = "G-377LCGTX74";
 ReactGA.initialize(Tracking_ID);
@@ -38,7 +45,15 @@ export const App = () => {
     "/employee/leaveHistory",
     "/employee/teams",
     "/employee/upcomingHolidays",
+    "/superAdmin",
+    "/superAdmin/employeeInfo",
+    "/superAdmin/employeeApproved",
+    "/superAdmin/internship",
+    "/employeeProfile",
+    "/superAdmin/leaveApproved",
+    "/superAdmin/internApproved",
   ];
+
   useEffect(() => {
     ReactGA.send({
       hitType: "pageview",
@@ -107,6 +122,14 @@ export const App = () => {
             </Route>
             <Route path="/employeeProfile" Component={EmployeeProfile} />
             <Route path="/account" Component={AccountSetting} />
+            <Route path="/superAdmin" Component={SuperAdmin}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="employeeInfo" element={<EmployeeInfo />} />
+              <Route path="employeeApproved" element={<ApprovedEmp />} />
+              <Route path="internship" element={<InternsInfo />} />
+              <Route path="leaveApproved" element={<EmployeeLeaveApproved />} />
+              <Route path="internApproved" element={<ApprovedInterns />} />
+            </Route>
           </>
         )}
         <Route path="/internship" Component={Internship} />

@@ -112,14 +112,16 @@ export const EmployeeLeaveForm = ({ leaveSubmit }) => {
                 />
               </td>
               <td className="px-5 py-10 w-1/4">
-                <input
-                  className="outline-none w-[95%] shadow p-2 rounded-md"
+                <textarea
+                  className="outline-none w-[95%] shadow p-2 rounded-md resize-none"
                   type="text"
                   placeholder="Reason"
+                  row="4"
+                  cols="5"
                   name="reason"
                   value={formData.reason}
                   onChange={handleChange}
-                />
+                ></textarea>
               </td>
             </tr>
           </tbody>
